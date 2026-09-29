@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Besbes Goals - احجز ملعبك، تابع البطولات واكتشف نجوم كرة القدم في مدينتك.">
+  <title>Besbes Goals | العب. احجز. نافس.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ball">⚽</div>
+    <span>Besbes Goals</span>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <a class="brand" href="#home" aria-label="Besbes Goals">
+      <span>Besbes</span> <b>Goals</b>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#home">الرئيسية</a>
+      <a href="#fields">الملاعب</a>
+      <a href="#tournaments">البطولات</a>
+      <a href="#players">النجوم</a>
+      <a href="#news">أخبار النجوم</a>
+      <a href="#about">عن المنصة</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="login-link auth-open" data-auth="login" type="button">تسجيل الدخول</button>
+      <button class="signup-btn auth-open" data-auth="signup" type="button">إنشاء حساب</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <div class="eyebrow"><span class="live-dot"></span> منصة كرة القدم في مدينتك</div>
+        <h1>احجز ملعبك.<br><strong>وابدأ المباراة.</strong></h1>
+        <p>
+          اكتشف أفضل الملاعب القريبة منك، احجز موعدك خلال دقائق،
+          تابع البطولات واكتشف نجوم كرة القدم في مجتمع واحد.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#fields" class="primary-btn">ابحث عن ملعب الآن <span>←</span></a>
+          <a href="#tournaments" class="ghost-btn">استكشف البطولات</a>
+        </div>
+
+        <div class="hero-stats">
+          <div><strong data-count="24">0</strong><span>ملعب متاح</span></div>
+          <div><strong data-count="38">0</strong><span>بطولة</span></div>
+          <div><strong data-count="920">0</strong><span>لاعب</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">مرر لاكتشاف المزيد <span>↓</span></div>
+    </section>
+
+    <section class="quick-search reveal">
+      <div class="search-title">
+        <span class="search-icon">⌕</span>
+        <div>
+          <small>ابدأ من هنا</small>
+          <h2>اعثر على ملعبك</h2>
+        </div>
+      </div>
+
+      <div class="search-field">
+        <label>المدينة</label>
+        <select>
+          <option>بسكرة</option>
+          <option>قسنطينة</option>
+          <option>الجزائر</option>
+        </select>
+      </div>
+
+      <div class="search-field">
+        <label>التاريخ</label>
+        <input type="date">
+      </div>
+
+      <div class="search-field">
+        <label>الوقت</label>
+        <select>
+          <option>أي وقت</option>
+          <option>16:00</option>
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>20:00</option>
+        </select>
+      </div>
+
+      <button class="search-btn" type="button" onclick="showToast('سيتم عرض الملاعب المتاحة قريبًا ⚽')">
+        بحث
+        <span>←</span>
+      </button>
+    </section>
+
+    <section class="section" id="fields">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-kicker">PLAY YOUR GAME</span>
+          <h2>ملاعب <span>مميزة</span></h2>
+          <p>اختر الملعب المناسب لمباراتك واحجز وقتك مباشرة.</p>
+        </div>
+        <a href="#" class="view-all">عرض جميع الملاعب ←</a>
+      </div>
+
+      <div class="cards-grid" id="stadiumsGrid">
+        <article class="field-card reveal">
+          <div class="card-image field-1">
+            <span class="badge available">متاح اليوم</span>
+            <button class="heart" aria-label="إضافة للمفضلة">♡</button>
+          </div>
+          <div class="card-body">
+            <div class="rating">★ 4.9</div>
+            <h3>ملعب الأبطال</h3>
+            <p>📍 وسط المدينة · ⚽ 5 ضد 5</p>
+            <div class="card-bottom"><strong>1,500 دج <small>/ الساعة</small></strong><button onclick="showToast('تم اختيار ملعب الأبطال')">احجز الآن</button></div>
+          </div>
+        </article>
+
+        <article class="field-card reveal">
+          <div class="card-image field-2">
+            <span class="badge">الأكثر حجزًا</span>
+            <button class="heart" aria-label="إضافة للمفضلة">♡</button>
+          </div>
+          <div class="card-body">
+            <div class="rating">★ 4.8</div>
+            <h3>Besbes Arena</h3>
+            <p>📍 حي النصر · ⚽ 7 ضد 7</p>
+            <div class="card-bottom"><strong>2,000 دج <small>/ الساعة</small></strong><button onclick="showToast('تم اختيار Besbes Arena')">احجز الآن</button></div>
+          </div>
+        </article>
+
+        <article class="field-card reveal">
+          <div class="card-image field-3">
+            <span class="badge">جديد</span>
+            <button class="heart" aria-label="إضافة للمفضلة">♡</button>
+          </div>
+          <div class="card-body">
+            <div class="rating">★ 4.7</div>
+            <h3>Goal Park</h3>
+            <p>📍 المنطقة الرياضية · ⚽ 5 ضد 5</p>
+            <div class="card-bottom"><strong>1,200 دج <small>/ الساعة</small></strong><button onclick="showToast('تم اختيار Goal Park')">احجز الآن</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dark-section" id="tournaments">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-kicker light">COMPETE</span>
+          <h2>آخر <span>البطولات</span></h2>
+          <p>نافس، كوّن فريقك، واصنع اسمك في المدينة.</p>
+        </div>
+        <a href="#" class="view-all light-link">كل البطولات ←</a>
+      </div>
+
+      <div class="tournament-grid">
+        <article class="tournament-card reveal">
+          <div class="tournament-cover tournament-1"><span>🏆</span><em>التسجيل مفتوح</em></div>
+          <div class="tournament-info">
+            <small>رمضان 2027 · 16 فريق</small>
+            <h3>بطولة الأحياء الرمضانية</h3>
+            <div><span>📅 15 مارس</span><span>📍 Besbes Arena</span></div>
+            <button onclick="showToast('صفحة البطولة قيد التجهيز')">عرض البطولة</button>
+          </div>
+        </article>
+
+        <article class="tournament-card reveal">
+          <div class="tournament-cover tournament-2"><span>⚡</span><em>قريبًا</em></div>
+          <div class="tournament-info">
+            <small>بطولة مفتوحة · 12 فريق</small>
+            <h3>Besbes Goals Cup</h3>
+            <div><span>📅 02 أبريل</span><span>📍 ملعب الأبطال</span></div>
+            <button onclick="showToast('سيتم فتح التسجيل قريبًا')">التفاصيل</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section players-section" id="players">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-kicker">TOP PLAYERS</span>
+          <h2>نجوم <span>Besbes Goals</span></h2>
+          <p>تعرف على اللاعبين الأكثر تألقًا هذا الأسبوع.</p>
+        </div>
+        <a href="#" class="view-all">تصنيف اللاعبين ←</a>
+      </div>
+
+      <div class="players-grid">
+        <article class="player-card reveal"><div class="player-avatar avatar-1">10</div><div><span>أفضل لاعب</span><h3>Yacine B.</h3><p>مهاجم · 18 هدف</p></div><strong>★ 4.9</strong></article>
+        <article class="player-card reveal"><div class="player-avatar avatar-2">7</div><div><span>هداف الأسبوع</span><h3>Amine K.</h3><p>مهاجم · 15 هدف</p></div><strong>★ 4.8</strong></article>
+        <article class="player-card reveal"><div class="player-avatar avatar-3">8</div><div><span>صانع الألعاب</span><h3>Rayen M.</h3><p>وسط · 12 تمريرة</p></div><strong>★ 4.8</strong></article>
+        <article class="player-card reveal"><div class="player-avatar avatar-4">1</div><div><span>أفضل حارس</span><h3>Islam A.</h3><p>حارس · 8 شباك نظيفة</p></div><strong>★ 4.7</strong></article>
+      </div>
+    </section>
+
+    <section class="news-section" id="news">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-kicker">LATEST NEWS</span>
+          <h2>أخبار <span>النجوم</span></h2>
+          <p>آخر الأخبار والقصص من عالم كرة القدم المحلي.</p>
+        </div>
+        <a href="#" class="view-all">كل الأخبار ←</a>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+        <article class="news-main reveal">
+          <div class="news-photo news-1"><span>حصري</span></div>
+          <div class="news-content"><small>منذ ساعتين · أخبار اللاعبين</small><h3>نجم جديد يلفت الأنظار بأداء استثنائي في آخر مباريات البطولة</h3><a href="#">اقرأ القصة ←</a></div>
+        </article>
+        <article class="news-item reveal"><div class="news-photo news-2"></div><small>منذ 5 ساعات</small><h3>فتح التسجيل في بطولة Besbes Goals Cup</h3><a href="#">اقرأ المزيد →</a></article>
+        <article class="news-item reveal"><div class="news-photo news-3"></div><small>أمس</small><h3>أفضل 5 لاعبين هذا الأسبوع</h3><a href="#">اقرأ المزيد →</a></article>
+      </div>
+    </section>
+
+    <section class="cta reveal" id="about">
+      <div class="cta-glow"></div>
+      <div>
+        <span class="section-kicker light">READY?</span>
+        <h2>مستعد للمباراة؟</h2>
+        <p>احجز ملعبك الآن وابدأ اللعب مع فريقك.</p>
+      </div>
+      <a href="#fields" class="primary-btn">احجز ملعبك الآن <span>←</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><a class="brand" href="#home"><span>Besbes</span> <b>Goals</b></a><p>المنصة الرياضية التي تجمع الملاعب واللاعبين والبطولات في مكان واحد.</p></div>
+    <div><h4>المنصة</h4><a href="#fields">الملاعب</a><a href="#tournaments">البطولات</a><a href="#players">اللاعبون</a></div>
+    <div><h4>مساعدة</h4><a href="#">تواصل معنا</a><a href="#">الأسئلة الشائعة</a><a href="#">الشروط والأحكام</a></div>
+    <div><h4>تابعنا</h4><div class="socials"><a href="#">IG</a><a href="#">FB</a><a href="#">TT</a></div></div>
+    <div class="footer-bottom"><span>© 2026 Besbes Goals. جميع الحقوق محفوظة.</span><span>صُنع بشغف لكرة القدم ⚽</span></div>
+  </footer>
+
+  
+<div class="auth-modal" id="authModal" aria-hidden="true"><div class="auth-backdrop" data-auth-close></div><div class="auth-panel" role="dialog" aria-modal="true"><button class="auth-close" type="button" data-auth-close>×</button><div class="auth-brand"><span>Besbes</span> <b>Goals</b> ⚽</div>
+<section class="auth-view" id="loginView"><div class="auth-heading"><span>WELCOME BACK</span><h2>مرحبًا بك مجددًا!</h2><p>سجّل دخولك لمتابعة حجوزاتك ومبارياتك وبطولاتك.</p></div><form id="loginForm" class="auth-form"><label><span>رقم الهاتف أو البريد الإلكتروني</span><div class="input-wrap">☎ <input required placeholder="رقم الهاتف أو البريد الإلكتروني"></div></label><label><span>كلمة المرور</span><div class="input-wrap">◉ <input type="password" required placeholder="كلمة المرور"><button type="button" class="password-toggle">إظهار</button></div></label><div class="auth-row"><label><input type="checkbox"> تذكرني</label><a href="#">نسيت كلمة المرور؟</a></div><button class="auth-submit">تسجيل الدخول ←</button></form><div class="or">أو سجل عبر</div><div class="social-login"><button type="button">Facebook <b>f</b></button><button type="button">Google <b>G</b></button></div><p class="auth-switch">ليس لديك حساب بعد؟ <button type="button" data-switch-auth="signup">أنشئ حسابًا جديدًا</button></p></section>
+<section class="auth-view hidden" id="signupView"><div class="auth-heading"><span>JOIN BESBES GOALS</span><h2>أنشئ حسابك وانطلق!</h2><p>سجّل الآن واحجز ملعبك وشارك في البطولات بسهولة.</p></div><form id="signupForm" class="auth-form"><label><span>الاسم الكامل</span><div class="input-wrap">♙ <input required placeholder="اكتب اسمك الكامل"></div></label><label><span>رقم الهاتف</span><div class="input-wrap">☎ <input type="tel" required placeholder="05 / 06 / 07 ..."></div></label><label><span>البريد الإلكتروني <small>(اختياري)</small></span><div class="input-wrap">✉ <input type="email" placeholder="example@email.com"></div></label><label><span>كلمة المرور</span><div class="input-wrap">◉ <input name="password" type="password" required minlength="6" placeholder="أنشئ كلمة مرور قوية"><button type="button" class="password-toggle">إظهار</button></div></label><label><span>تأكيد كلمة المرور</span><div class="input-wrap">◉ <input name="confirm" type="password" required minlength="6" placeholder="أعد كتابة كلمة المرور"></div></label><div class="account-type account-note"><b>الحساب:</b><span>كل حساب جديد يبدأ كلاعب، ويمكن للإدارة ترقيته لاحقًا إلى صاحب ملعب أو Admin.</span></div><label class="terms"><input type="checkbox" required><span>أوافق على الشروط والأحكام وسياسة الخصوصية.</span></label><button class="auth-submit">إنشاء الحساب الآن ←</button></form><div class="or">أو سجل عبر</div><div class="social-login"><button type="button">Facebook <b>f</b></button><button type="button">Google <b>G</b></button></div><p class="auth-switch">لديك حساب بالفعل؟ <button type="button" data-switch-auth="login">تسجيل الدخول</button></p></section></div></div>
+
+<div class="dashboard-modal" id="dashboardModal" aria-hidden="true">
+  <div class="dashboard-backdrop" data-dashboard-close></div>
+  <div class="dashboard-panel">
+    <div class="dashboard-top">
+      <div><span class="section-kicker light">BESBES GOALS</span><h2 id="dashboardTitle">لوحة الحساب</h2><p id="dashboardSubtitle">إدارة حسابك وتواصلك مع المنصة.</p></div>
+      <button class="dashboard-close" type="button" data-dashboard-close>×</button>
+    </div>
+    <div class="dashboard-userbar"><div class="dashboard-avatar" id="dashboardAvatar">BG</div><div><strong id="dashboardName">—</strong><span id="dashboardRole">player</span></div><button class="ghost-dashboard" id="logoutBtn" type="button">تسجيل الخروج</button></div>
+    <div class="dashboard-grid" id="dashboardGrid"></div>
+    <div class="dashboard-content" id="dashboardContent"></div>
+  </div>
+</div>
+
+<div class="compose-modal" id="composeModal" aria-hidden="true">
+  <div class="dashboard-backdrop" data-compose-close></div>
+  <div class="compose-panel">
+    <button class="dashboard-close" type="button" data-compose-close>×</button>
+    <span class="section-kicker">CONTACT STADIUM</span>
+    <h2>إرسال رسالة لصاحب الملعب</h2>
+    <p id="composeStadiumName">—</p>
+    <form id="ticketForm" class="dashboard-form">
+      <input type="hidden" id="ticketStadiumId">
+      <label>الموضوع<input id="ticketSubject" required maxlength="180" placeholder="مثلاً: أريد الاستفسار عن الحجز"></label>
+      <label>الرسالة<textarea id="ticketMessage" required maxlength="5000" rows="5" placeholder="اكتب رسالتك لصاحب الملعب..."></textarea></label>
+      <button class="auth-submit" type="submit">إرسال الطلب →</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+-- بعد التسجيل من الموقع، اجعل حسابك Admin بهذا الاستعلام:
+-- UPDATE goals_accounts SET role='admin' WHERE email='YOUR_EMAIL';
+-- أو بالهاتف:
+-- UPDATE goals_accounts SET role='admin' WHERE phone='YOUR_PHONE';
